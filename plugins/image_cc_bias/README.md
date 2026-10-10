@@ -32,22 +32,34 @@ case 7：模板 2 → 柔性结构，RMSD **15.854187 → 14.751323 Å**。图�
 
 ## 在 CPU 上复现这两张图
 
-下载示例分支，并进入仓库目录：
+准备 Git、Python 3.11 及其 `venv` / `ensurepip` 组件。Ubuntu/Debian 的系统 Python 可通过 `sudo apt-get install python3-venv` 准备 venv 组件。以下 Linux/macOS 命令从下载 `develop` 到核验两张结果图，可依次复制到终端执行：
 
 ```bash
-git clone --branch lpem-rmsd-examples https://github.com/NiuYiHao/SPONGE.git
+git clone --branch develop --single-branch https://github.com/NiuYiHao/SPONGE.git
 cd SPONGE
+python3 -I -m venv .venv
+source .venv/bin/activate
+python -I -m pip --isolated install --index-url https://pypi.org/simple -r plugins/image_cc_bias/examples/requirements.txt
+python -I -m pip check
+python -I plugins/image_cc_bias/examples/1ake/reproduce_rmsd.py --out outputs/1ake
+python -I plugins/image_cc_bias/examples/fus/reproduce_rmsd.py --out outputs/fus
+python -I plugins/image_cc_bias/examples/verify_rmsd.py --out-root outputs
 ```
 
-从仓库根目录执行。已核验环境为 Python 3.11，依赖版本固定在 [requirements.txt](examples/requirements.txt)。
+已核验环境为 Python 3.11，依赖版本固定在 [requirements.txt](examples/requirements.txt)。`python -I` 使用隔离模式，`pip --isolated` 使用独立 pip 设置，并显式从 PyPI 安装绘图依赖。`pip check` 应输出 `No broken requirements found.`。
 
-```bash
-python -m pip install -r plugins/image_cc_bias/examples/requirements.txt
-python plugins/image_cc_bias/examples/1ake/reproduce_rmsd.py --out outputs/1ake
-python plugins/image_cc_bias/examples/fus/reproduce_rmsd.py --out outputs/fus
-```
+输出分别为 `outputs/1ake/1ake_rmsd.{png,svg,pdf,csv,json}` 和 `outputs/fus/fus_rmsd.{png,svg,pdf,csv,json}`。CSV 保留逐目标数值，JSON 给出案例数值、均值、改善数量和源数据哈希。脚本读取随仓库保存的实测记录，重新生成结果图；这一步的验证范围为数据与绘图复现。
 
-输出分别为 `1ake_rmsd.{png,svg,pdf,csv,json}` 和 `fus_rmsd.{png,svg,pdf,csv,json}`。CSV 保留逐目标数值，JSON 给出案例数值、均值、改善数量和源数据哈希。脚本读取随仓库保存的实测记录，重新生成结果图；这一步的验证范围为数据与绘图复现。
+[verify_rmsd.py](examples/verify_rmsd.py) 独立检查输出格式、CSV 的每个目标、JSON 数值和源数据哈希，终端应显示 `PASS 1AKE`、`PASS FUS`；完整核验记录保存到 `outputs/verification.json`。
+
+| 预期结果 | 1AKE | FUS |
+|---|---:|---:|
+| 绘图目标数 | 45 | 10 |
+| 标出的案例 | 19 | 7 |
+| 案例模板 RMSD / Å | 0.920656 | 15.854187 |
+| 案例柔性 RMSD / Å | 0.101559 | 14.751323 |
+| 模板 RMSD 均值 / Å | 0.490370 | 15.212447 |
+| 柔性 RMSD 均值 / Å | 0.108925 | 14.637319 |
 
 记录来自 2026-09-30 的 plugin 运行，seed=731；脚本先校验源 CSV 的 SHA256，再按冻结划分选择 45+10 个目标。数据逐值提取自 `DEVELOPMENT.html` 内的 `lpem-replay` 摘要，原始记录与源 plugin 的 SHA256 见 provenance。这里沿用该次运行保存的数值；2026-10-09 的六案例双精度重算另有独立记录。
 
