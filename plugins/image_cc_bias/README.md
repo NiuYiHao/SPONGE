@@ -32,6 +32,13 @@ case 7：模板 2 → 柔性结构，RMSD **15.854187 → 14.751323 Å**。图�
 
 ## 在 CPU 上复现这两张图
 
+下载示例分支，并进入仓库目录：
+
+```bash
+git clone --branch lpem-rmsd-examples https://github.com/NiuYiHao/SPONGE.git
+cd SPONGE
+```
+
 从仓库根目录执行。已核验环境为 Python 3.11，依赖版本固定在 [requirements.txt](examples/requirements.txt)。
 
 ```bash
