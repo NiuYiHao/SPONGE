@@ -4,6 +4,17 @@
 
 [中文](README.md)
 
+## LPEM-MDFF: 1AKE / FUS RMSD examples and plugin
+
+| Content | Entry point |
+|---|---|
+| Result previews, setup and reproduction commands | [Example guide](https://github.com/NiuYiHao/SPONGE/blob/lpem-rmsd-examples/plugins/image_cc_bias/README.md) |
+| 1AKE RMSD plot reproduction | [examples/1ake/reproduce_rmsd.py](https://github.com/NiuYiHao/SPONGE/blob/lpem-rmsd-examples/plugins/image_cc_bias/examples/1ake/reproduce_rmsd.py) |
+| FUS RMSD plot reproduction | [examples/fus/reproduce_rmsd.py](https://github.com/NiuYiHao/SPONGE/blob/lpem-rmsd-examples/plugins/image_cc_bias/examples/fus/reproduce_rmsd.py) |
+| Fitting algorithm and SPONGE/PRIPS plugin | [plugin.py](https://github.com/NiuYiHao/SPONGE/blob/lpem-rmsd-examples/plugins/image_cc_bias/plugin.py) |
+
+[Open the example branch](https://github.com/NiuYiHao/SPONGE/tree/lpem-rmsd-examples). The scripts redraw archived measured results on a CPU. The guide also provides commands for fitting again from PDB / PNG inputs.
+
 **Simulation Package tOward Next GEneration of molecular modelling**
 
 ```
