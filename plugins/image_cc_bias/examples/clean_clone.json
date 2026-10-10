@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-10",
+  "branch": "develop",
+  "clone_commit": "550b8492bfd4c1df51b9545e5c4ba5b7a94f1a4d",
+  "python": "3.11.12",
+  "isolated": true,
+  "include_system_site_packages": false,
+  "dependencies_from_venv": true,
+  "pip_check": "PASS",
+  "packages": {
+    "numpy": "1.26.4",
+    "matplotlib": "3.10.3",
+    "pillow": "12.3.0",
+    "contourpy": "1.3.3",
+    "cycler": "0.12.1",
+    "fonttools": "4.66.1",
+    "kiwisolver": "1.5.1",
+    "packaging": "26.3",
+    "pyparsing": "3.3.3",
+    "python-dateutil": "2.9.0.post0",
+    "six": "1.17.0"
+  },
+  "verification": {
+    "status": "PASS",
+    "cases": [
+      {
+        "status": "PASS",
+        "system": "1AKE",
+        "n_targets": 45,
+        "selected_target": 19,
+        "baseline_rmsd_A": 0.9206563830375671,
+        "flexible_rmsd_A": 0.10155890882015228,
+        "png_dimensions": [
+          4322,
+          2480
+        ],
+        "source_sha256": "458977217c5dfe04e624bd8b2f294b7922a41966b6507e0f48ea41b040734b01"
+      },
+      {
+        "status": "PASS",
+        "system": "FUS",
+        "n_targets": 10,
+        "selected_target": 7,
+        "baseline_rmsd_A": 15.85418701171875,
+        "flexible_rmsd_A": 14.751322746276855,
+        "png_dimensions": [
+          4322,
+          2480
+        ],
+        "source_sha256": "458977217c5dfe04e624bd8b2f294b7922a41966b6507e0f48ea41b040734b01"
+      }
+    ]
+  },
+  "png": {
+    "1ake": {
+      "sha256": "7a1b91650c64fa581268f30ea5730332eee7b98e622b5d5f764e83c895bd7565",
+      "matches_independent_clone": true
+    },
+    "fus": {
+      "sha256": "37a116192a72ad8ef6b9c688510a9361478740db32d3288e6899ed021c81e322",
+      "matches_independent_clone": true
+    }
+  },
+  "scope": "Fresh GitHub clone, new venv, package installation, archived-result RMSD redraw and output verification"
+}
