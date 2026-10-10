@@ -15,6 +15,26 @@
 
 The examples redraw per-target RMSD plots on a CPU from archived measured results included in this repository. The example guide also provides commands for fitting again from PDB / PNG inputs.
 
+### From a fresh clone to RMSD result plots
+
+Use Git and Python 3.11 with `venv` / `ensurepip`. Run the following commands in a Linux/macOS terminal to download the develop branch, create an isolated environment, generate both plots, and verify the outputs:
+
+```bash
+git clone --branch develop --single-branch https://github.com/NiuYiHao/SPONGE.git
+cd SPONGE
+python3 -I -m venv .venv
+source .venv/bin/activate
+python -I -m pip --isolated install --index-url https://pypi.org/simple -r plugins/image_cc_bias/examples/requirements.txt
+python -I -m pip check
+python -I plugins/image_cc_bias/examples/1ake/reproduce_rmsd.py --out outputs/1ake
+python -I plugins/image_cc_bias/examples/fus/reproduce_rmsd.py --out outputs/fus
+python -I plugins/image_cc_bias/examples/verify_rmsd.py --out-root outputs
+```
+
+The last command prints `PASS 1AKE` and `PASS FUS`. Open `outputs/1ake/1ake_rmsd.png` and `outputs/fus/fus_rmsd.png`. PDF, SVG, CSV and JSON outputs accompany each image. On Ubuntu/Debian, `sudo apt-get install python3-venv` supplies the system Python venv component.
+
+Development and commits target `develop`.
+
 **Simulation Package tOward Next GEneration of molecular modelling**
 
 ```
