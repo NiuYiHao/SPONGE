@@ -1,0 +1,14 @@
+{
+  "system": "1AKE",
+  "n_targets": 45,
+  "rmsd_improved": 45,
+  "baseline_mean_rmsd_A": 0.4903704507483376,
+  "flexible_mean_rmsd_A": 0.10892502123283015,
+  "selected_target": 19,
+  "selected_baseline_rmsd_A": 0.9206563830375671,
+  "selected_flexible_rmsd_A": 0.10155890882015228,
+  "source_rmsd_records_sha256": "458977217c5dfe04e624bd8b2f294b7922a41966b6507e0f48ea41b040734b01",
+  "source_plugin_sha256": "8f57f957c8517c50d5493206c64406eb52324cdee468efdd040a7fa7a9330c0c",
+  "scope": "Redraw of archived static fitting measurements",
+  "seed": 731
+}

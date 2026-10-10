@@ -4,6 +4,17 @@
 
 [English](README_en.md)
 
+## LPEM-MDFF：1AKE / FUS RMSD 示例与 plugin
+
+| 内容 | 直接入口 |
+|---|---|
+| 示例结果图、环境与复现命令 | [柔性拟合示例说明](plugins/image_cc_bias/README.md) |
+| 1AKE RMSD 图复现脚本 | [examples/1ake/reproduce_rmsd.py](plugins/image_cc_bias/examples/1ake/reproduce_rmsd.py) |
+| FUS RMSD 图复现脚本 | [examples/fus/reproduce_rmsd.py](plugins/image_cc_bias/examples/fus/reproduce_rmsd.py) |
+| 拟合算法与 SPONGE/PRIPS plugin | [plugins/image_cc_bias/plugin.py](plugins/image_cc_bias/plugin.py) |
+
+两个示例使用仓库内保存的实测记录，在 CPU 上重画逐目标 RMSD 图；说明页另列从 PDB / PNG 重新拟合的命令。
+
 **Simulation Package tOward Next GEneration of molecular modelling**
 
 ```

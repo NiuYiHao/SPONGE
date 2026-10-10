@@ -1,0 +1,25 @@
+{
+  "schema": "image_cc_bias.rmsd_archive.v1",
+  "source_document": "../../DEVELOPMENT.html",
+  "source_document_sha256": "f7df10f0574158d0c3613c44f22b7580c0f7bbc10e5c28c9b7233a384935e223",
+  "source_commit": "1c26b32ce7ea4f03f7c22ff27254906e2375f96d",
+  "source_plugin_sha256": "8f57f957c8517c50d5493206c64406eb52324cdee468efdd040a7fa7a9330c0c",
+  "rmsd_records_sha256": "458977217c5dfe04e624bd8b2f294b7922a41966b6507e0f48ea41b040734b01",
+  "source_run": "plugin_reproduction_20260930",
+  "seed": 731,
+  "total_records": 60,
+  "plotted_targets": {
+    "1AKE": 45,
+    "FUS": 10
+  },
+  "excluded_template_controls": {
+    "1AKE": [
+      1,
+      13,
+      25,
+      37,
+      50
+    ]
+  },
+  "scope": "Archived static C-alpha flexible fitting measurements; RMSD values copied exactly from the embedded summaries."
+}
