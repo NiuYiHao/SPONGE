@@ -15,6 +15,26 @@
 
 两个示例使用仓库内保存的实测记录，在 CPU 上重画逐目标 RMSD 图；说明页另列从 PDB / PNG 重新拟合的命令。
 
+### 从全新目录跑到 RMSD 结果图
+
+准备 Git、Python 3.11 及其 `venv` / `ensurepip` 组件。下面的 Linux/macOS 命令依次完成下载、隔离环境安装、两个示例运行和结果核验：
+
+```bash
+git clone --branch develop --single-branch https://github.com/NiuYiHao/SPONGE.git
+cd SPONGE
+python3 -I -m venv .venv
+source .venv/bin/activate
+python -I -m pip --isolated install --index-url https://pypi.org/simple -r plugins/image_cc_bias/examples/requirements.txt
+python -I -m pip check
+python -I plugins/image_cc_bias/examples/1ake/reproduce_rmsd.py --out outputs/1ake
+python -I plugins/image_cc_bias/examples/fus/reproduce_rmsd.py --out outputs/fus
+python -I plugins/image_cc_bias/examples/verify_rmsd.py --out-root outputs
+```
+
+最后一条命令输出 `PASS 1AKE` 和 `PASS FUS`。结果图分别位于 `outputs/1ake/1ake_rmsd.png`、`outputs/fus/fus_rmsd.png`；同目录保存 PDF、SVG、CSV 和 JSON。Ubuntu/Debian 的系统 Python 可通过 `sudo apt-get install python3-venv` 准备 venv 组件。
+
+本仓库的开发与提交目标固定为 `develop`。
+
 **Simulation Package tOward Next GEneration of molecular modelling**
 
 ```
