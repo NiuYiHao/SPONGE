@@ -104,4 +104,4 @@ python plugins/image_cc_bias/plugin.py \
 
 RMSD 示例对应静态 Cα 拟合输出。SPONGE 短程积分检查对应偏置力接口与积分行为，两类验证各自保留结果和评价范围。
 
-图形核验记录见 [examples/QA.md](examples/QA.md)。
+图形核验记录见 [examples/QA.md](examples/QA.md)。全新 clone 的安装、运行和结果核验记录见 [examples/CLEAN_CLONE.md](examples/CLEAN_CLONE.md)。
